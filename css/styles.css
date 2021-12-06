@@ -1,0 +1,68 @@
+/* Globals */
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* NavBar */
+
+.nav {
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.nav .logo {
+  background-color: rgb(34, 33, 33);
+  float: left;
+  height: 100%;
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav .logo .logo--logo {
+  color: brown;
+}
+.nav .container__nav {
+  background-color: rgb(34, 33, 33);
+  float: right;
+  display: flex;
+  width: 80%;
+  height: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+/* MAIN */
+
+.main {
+  width: 100%;
+  background-color: rgb(49, 48, 48);
+  height: 100%;
+}
+.main .container1 {
+  height: 90vh;
+}
+.main .container2 {
+  width: 95%;
+  background-color: brown;
+  border-radius: 10px;
+  margin: 2rem auto;
+}
+.main .container3 {
+  width: 95%;
+  background-color: brown;
+  border-radius: 10px;
+  margin: 2rem auto;
+}
+.main .container4 {
+  width: 95%;
+  background-color: brown;
+  border-radius: 10px;
+  margin: 2rem auto;
+}
+.main .container1 .texto__banner {
+  color: brown;
+}
