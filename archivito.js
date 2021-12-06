@@ -60,5 +60,5 @@ for (let contador = 0; contador != arrayPartidas.length; contador++) {
     (parseInt(arrayPartidas[contador].asesinatos) +
       parseInt(arrayPartidas[contador].asistencias)) /
     arrayPartidas[contador].muertes;
-  alert(promedio);
+  alert(`El promedio de la partida ${contador} es de ${promedio}`);
 }
