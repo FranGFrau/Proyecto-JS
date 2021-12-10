@@ -1,8 +1,10 @@
-class Personaje {
-  constructor(asesinatos, muertes, asistencias) {
+class Personajes {
+  constructor(id, asesinatos, muertes, asistencias, promedio) {
+    this.id = id;
     this.asesinatos = asesinatos;
     this.asistencias = asistencias;
     this.muertes = muertes;
+    this.promedio = promedio;
   }
 }
 
@@ -19,7 +21,7 @@ function pedirPartidas() {
 
 let partidas = pedirPartidas();
 
-for (let m = 0; m != partidas; m++) {
+for (let vuelta = 0; vuelta != partidas; vuelta++) {
   function pedirAsesinatos() {
     let i = prompt("Inserte su cantidad de asesinatos");
 
@@ -45,20 +47,42 @@ for (let m = 0; m != partidas; m++) {
     return k;
   }
 
+  let id = vuelta + 1;
   let asesinatos = pedirAsesinatos();
   let muertes = pedirMuertes();
   let asistencias = pedirAsistencias();
+  let promedio = (parseInt(asesinatos) + parseInt(asistencias)) / muertes;
 
-  let PartidaIngresada = new Personaje(asesinatos, muertes, asistencias);
+  let PartidaIngresada = new Personajes(
+    id,
+    asesinatos,
+    muertes,
+    asistencias,
+    promedio
+  );
   arrayPartidas.push(PartidaIngresada);
 }
 
-console.log(arrayPartidas);
-
-for (let contador = 0; contador != arrayPartidas.length; contador++) {
+/* for (let contador = 0; contador != arrayPartidas.length; contador++) {
   let promedio =
     (parseInt(arrayPartidas[contador].asesinatos) +
       parseInt(arrayPartidas[contador].asistencias)) /
     arrayPartidas[contador].muertes;
   alert(`El promedio de la partida ${contador + 1} es de ${promedio}`);
-}
+} */
+
+console.log(arrayPartidas);
+
+/* interactuar con el dom */
+
+const container = document.getElementById("2doContainer");
+
+arrayPartidas.forEach((Personajes) => {
+  let displayInfo = document.createElement("div");
+  displayInfo.innerHTML = `<div>Partida ${Personajes.id} </div>
+  <div>Asesinatos ${Personajes.asesinatos}</div>
+  <div>Muertes ${Personajes.muertes}</div>
+  <div>Asistencias ${Personajes.asistencias}</div>
+  <div>Promedio ${Personajes.promedio}</div>`;
+  container.appendChild(displayInfo);
+});
