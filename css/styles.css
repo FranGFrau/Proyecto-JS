@@ -49,21 +49,44 @@
   background-color: rgb(49, 48, 48);
   height: 110%;
 }
+
+/* Container 1 */
+
 .main .container1 {
   height: 90vh;
 }
+
+/* Container 2 */
+
 .main .container2 {
   width: 95%;
   background-color: brown;
   border-radius: 10px;
   margin: 2rem auto;
+  padding: 0.5rem 0cm;
 }
+.main .container2 .containerInputs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main .container2 .boxInfo {
+  width: 90%;
+  background-color: rgb(62, 62, 62);
+  margin: 2rem auto;
+}
+
+/* Container 3 */
+
 .main .container3 {
   width: 95%;
   background-color: brown;
   border-radius: 10px;
   margin: 2rem auto;
 }
+
+/* Container 4 */
+
 .main .container4 {
   width: 95%;
   background-color: brown;
