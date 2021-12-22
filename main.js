@@ -9,69 +9,25 @@ class Personajes {
 
 const arrayPartidas = [];
 
-/* function moduloGral() {
-  function pedirPartidas() {
-    let l = prompt("Inserte su cantidad de partidas jugadas");
-
-    while (isNaN(l) || l == null || l == "") {
-      l = prompt("Inserte un número");
-    }
-    return l;
-  }
-
-  let partidas = pedirPartidas();
-
-  for (let vuelta = 0; vuelta != partidas; vuelta++) {
-    function pedirAsesinatos() {
-      let i = prompt("Inserte su cantidad de asesinatos");
-
-      while (isNaN(i) || i == null || i == "") {
-        i = prompt("Inserte un número");
-      }
-      return i;
-    }
-    function pedirMuertes() {
-      let j = prompt("Inserte su cantidad de muertes");
-
-      while (isNaN(j) || j == null || j == "") {
-        j = prompt("Inserte un número");
-      }
-      return j;
-    }
-    function pedirAsistencias() {
-      let k = prompt("Inserte su cantidad de asistencias");
-
-      while (isNaN(k) || k == null || k == "") {
-        k = prompt("Inserte un número");
-      }
-      return k;
-    }
-
-    let asesinatos = pedirAsesinatos();
-    let muertes = pedirMuertes();
-    let asistencias = pedirAsistencias();
-    let promedio = (parseInt(asesinatos) + parseInt(asistencias)) / muertes;
-
-    let PartidaIngresada = new Personajes(
-      id,
-      asesinatos,
-      muertes,
-      asistencias,
-      promedio
-    );
-    arrayPartidas.push(PartidaIngresada);
-  }
-} */
-
-/* for (let contador = 0; contador != arrayPartidas.length; contador++) {
-  let promedio =
-    (parseInt(arrayPartidas[contador].asesinatos) +
-      parseInt(arrayPartidas[contador].asistencias)) /
-    arrayPartidas[contador].muertes;
-  alert(`El promedio de la partida ${contador + 1} es de ${promedio}`);
-} */
+const arrayTop = [
+  { id: 1, promedio: 9 },
+  { id: 2, promedio: 5 },
+  { id: 3, promedio: 8 },
+  { id: 4, promedio: 11 },
+  { id: 5, promedio: 7 },
+  { id: 6, promedio: 8.5 },
+  { id: 7, promedio: 9.2 },
+];
 
 console.log(arrayPartidas);
+
+const guardarLocal = (nombre, valor) => {
+  localStorage.setItem(nombre, valor);
+};
+
+for (const promedio of arrayTop) {
+  guardarLocal(promedio.id, JSON.stringify(promedio));
+}
 
 /* interactuar con el dom */
 
@@ -99,10 +55,10 @@ function sacarCalculoPromedio(e) {
   arrayPartidas.forEach((Personajes) => {
     let displayInfo = document.createElement("div");
     displayInfo.classList.add("boxInfo");
-    displayInfo.innerHTML = `<div>Asesinatos ${Personajes.asesinatos}</div>
-  <div>Muertes ${Personajes.muertes}</div>
-  <div>Asistencias ${Personajes.asistencias}</div>
-  <div>Promedio ${Personajes.promedio}</div>`;
+    displayInfo.innerHTML = `<div class="boxEstilo">Asesinatos ${Personajes.asesinatos}</div>
+  <div class="boxEstilo">Muertes ${Personajes.muertes}</div>
+  <div class="boxEstilo">Asistencias ${Personajes.asistencias}</div>
+  <div class="boxEstilo">Promedio ${Personajes.promedio}</div>`;
     container.appendChild(displayInfo);
   });
 
