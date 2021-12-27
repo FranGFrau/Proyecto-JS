@@ -100,3 +100,13 @@
 .main .container1 .texto__banner {
   color: brown;
 }
+.main .container4 .boxInfo {
+  width: 95%;
+  background-color: rgb(62, 62, 62);
+  margin: 1rem auto;
+  height: 4.5rem;
+}
+.main .container4 .boxInfo .boxEstilo {
+  color: bisque;
+  display: inline-block;
+}

@@ -31,8 +31,7 @@ for (const promedio of arrayTop) {
 
 /* interactuar con el dom */
 
-let elFormulario = document.getElementById("containerInputs");
-elFormulario.addEventListener("submit", sacarCalculoPromedio);
+$("#containerInputs").submit(sacarCalculoPromedio);
 
 function sacarCalculoPromedio(e) {
   e.preventDefault();
@@ -50,17 +49,22 @@ function sacarCalculoPromedio(e) {
   );
   arrayPartidas.push(PartidaIngresada);
 
-  const container = document.getElementById("2doContainer");
-
   arrayPartidas.forEach((Personajes) => {
-    let displayInfo = document.createElement("div");
-    displayInfo.classList.add("boxInfo");
-    displayInfo.innerHTML = `<div class="boxEstilo">Asesinatos ${Personajes.asesinatos}</div>
+    $("#2doContainer")
+      .append(`<div class="boxInfo"><div class="boxEstilo">Asesinatos ${Personajes.asesinatos}</div>
   <div class="boxEstilo">Muertes ${Personajes.muertes}</div>
   <div class="boxEstilo">Asistencias ${Personajes.asistencias}</div>
-  <div class="boxEstilo">Promedio ${Personajes.promedio}</div>`;
-    container.appendChild(displayInfo);
+  <div class="boxEstilo">Promedio ${Personajes.promedio}</div></div>`);
   });
 
   arrayPartidas.splice(0, 1);
 }
+
+arrayTop.sort(function (a, b) {
+  return b.promedio - a.promedio;
+});
+
+arrayTop.forEach((Top) => {
+  $("#4toContainer").append(`<div class="boxInfo"><div>Posicion ${Top.id}</div>
+  <div class="boxEstilo">Promedio ${Top.promedio}</div></div>`);
+});
