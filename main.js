@@ -19,8 +19,6 @@ const arrayTop = [
   { id: 7, promedio: 9.2 },
 ];
 
-console.log(arrayPartidas);
-
 const guardarLocal = (nombre, valor) => {
   localStorage.setItem(nombre, valor);
 };
