@@ -55,6 +55,39 @@
 .main .container1 {
   height: 90vh;
 }
+.main .container1 .banner {
+  height: 100%;
+  width: 97%;
+  margin: auto auto;
+  display: flex;
+  padding-top: 1rem;
+}
+.main .container1 .banner .bannerItem1 {
+  background-image: url("../media/campeon.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  width: 20%;
+}
+.main .container1 .banner .bannerItem2 {
+  background-image: url("../media/csgo.jpeg");
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  width: 20%;
+}
+.main .container1 .banner .bannerItem3 {
+  background-image: url("../media/warframe.webp");
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  width: 20%;
+}
+.main .container1 .banner .bannerItem4 {
+  background-color: brown;
+  height: 100%;
+  width: 40%;
+}
 
 /* Container 2 */
 
@@ -95,7 +128,9 @@
   width: 95%;
   background-color: brown;
   border-radius: 10px;
-  margin: 2rem auto;
+  margin-top: 2rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 .main .container1 .texto__banner {
   color: brown;
@@ -106,7 +141,19 @@
   margin: 1rem auto;
   height: 4.5rem;
 }
+.main .container4 .boxInfo .boxPosicion {
+  display: flex;
+  width: 20%;
+  height: 100%;
+  margin: auto auto;
+  float: left;
+  align-items: center;
+  justify-content: center;
+}
 .main .container4 .boxInfo .boxEstilo {
   color: bisque;
-  display: inline-block;
+  display: flex;
+  width: 80%;
+  height: 100%;
+  align-items: center;
 }

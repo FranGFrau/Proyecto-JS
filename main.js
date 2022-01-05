@@ -63,6 +63,10 @@ arrayTop.sort(function (a, b) {
 });
 
 arrayTop.forEach((Top) => {
-  $("#4toContainer").append(`<div class="boxInfo"><div>Posicion ${Top.id}</div>
+  let posicion = arrayTop.indexOf(Top);
+  $("#4toContainer")
+    .append(`<div class="boxInfo"><div class="boxPosicion">Posicion ${
+    posicion + 1
+  }</div>
   <div class="boxEstilo">Promedio ${Top.promedio}</div></div>`);
 });
