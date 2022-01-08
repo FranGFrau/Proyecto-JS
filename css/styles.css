@@ -4,6 +4,9 @@
   margin: 0;
   box-sizing: border-box;
 }
+:root {
+  --color-sliders: rgba(46, 45, 48, 0.493);
+}
 
 /* NavBar */
 
@@ -68,6 +71,33 @@
   background-size: cover;
   height: 100%;
   width: 20%;
+}
+.main .container1 .banner .bannerItem1 .slider1 {
+  height: 100%;
+  width: 100%;
+  background-color: var(--color-sliders);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: aliceblue;
+}
+.main .container1 .banner .bannerItem2 .slider2 {
+  height: 100%;
+  width: 100%;
+  background-color: var(--color-sliders);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: aliceblue;
+}
+.main .container1 .banner .bannerItem3 .slider3 {
+  height: 100%;
+  width: 100%;
+  background-color: var(--color-sliders);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: aliceblue;
 }
 .main .container1 .banner .bannerItem2 {
   background-image: url("../media/csgo.jpeg");

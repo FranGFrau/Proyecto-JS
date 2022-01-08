@@ -70,3 +70,45 @@ arrayTop.forEach((Top) => {
   }</div>
   <div class="boxEstilo">Promedio ${Top.promedio}</div></div>`);
 });
+
+/* sliders banner */
+
+$("#sliderBanner1").append(`
+  <div id="sliderTransparente1" class="slider1">
+    <div>icono</div>
+    <p>texto de ejemplo</p>
+  </div>`);
+
+$("#sliderBanner2").append(`
+  <div id="sliderTransparente2" class="slider2">
+    <div>icono</div>
+    <p>texto de ejemplo distinto 60</p>
+  </div>`);
+
+$("#sliderBanner3").append(`
+  <div id="sliderTransparente3" class="slider3">
+    <div>icono</div>
+    <p>texto de ejemplo distinto 120</p>
+  </div>`);
+
+$("#sliderBanner1").hover(() => {
+  $("#sliderTransparente1").slideUp("fast");
+});
+$("#sliderBanner1").mouseleave(() => {
+  $("#sliderTransparente1").slideDown("fast");
+});
+
+$("#sliderBanner2").hover(() => {
+  $("#sliderTransparente2").slideUp("fast");
+});
+$("#sliderBanner2").mouseleave(() => {
+  $("#sliderTransparente2").slideDown("fast");
+});
+
+$("#sliderBanner3").hover(() => {
+  $("#sliderTransparente3").slideUp("fast");
+});
+$("#sliderBanner3").mouseleave(() => {
+  $("#sliderTransparente3").slideDown("fast");
+});
+
