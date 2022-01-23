@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "precio": 300,
+    "nombre": "caja cs",
+    "imagen": "imagen"
+  },
+  {
+    "id": 2,
+    "precio": 300,
+    "nombre": "caja cs",
+    "imagen": "imagen"
+  },
+  {
+    "id": 3,
+    "precio": 300,
+    "nombre": "caja cs",
+    "imagen": "imagen"
+  },
+  {
+    "id": 4,
+    "precio": 300,
+    "nombre": "caja cs",
+    "imagen": "imagen"
+  },
+  {
+    "id": 5,
+    "precio": 300,
+    "nombre": "caja cs",
+    "imagen": "imagen"
+  },
+  {
+    "id": 6,
+    "precio": 300,
+    "nombre": "caja cs",
+    "imagen": "imagen"
+  },
+  {
+    "id": 7,
+    "precio": 300,
+    "nombre": "caja cs",
+    "imagen": "imagen"
+  }
+]

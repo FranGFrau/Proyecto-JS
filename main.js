@@ -28,6 +28,63 @@ for (const promedio of arrayTop) {
   guardarLocal(promedio.id, JSON.stringify(promedio));
 }
 
+/* carrito 3er container */
+
+let productos = [];
+$.ajax({
+  url: "./data/productos.json",
+  dataType: "json",
+  success: (respuesta) => {
+    subirProductos(respuesta);
+  },
+});
+
+const subirProductos = (respuesta) => {
+  productos = respuesta;
+  const container = $("#3erContainer");
+  container.innerHTML = "";
+
+  productos.forEach((producto, indice) => {
+    let tarj = document.createElement("div");
+    tarj.classList.add("tarj");
+    let html = `
+  <img src="${producto.imagen}" class="tarj__img" alt="...">
+  <div class="tarj__body">
+  <h4 class="tarj__titulo">${producto.nombre}</h4>
+  <p class="tarj__precio">${producto.precio}</p>
+  <a href="#cart" class="tarj__btn" onClick="agregarAlCarrito(${indice})">Comprar</a>
+  </div>
+  `;
+    tarj.innerHTML = html;
+    container.append(tarj);
+  });
+};
+
+let carrito = $("#cart");
+
+const armarCarrito = () => {
+  let total = 0;
+  carrito.className = "cart";
+  carrito.innerHTML = "";
+  if (cart.length > 0) {
+    cart.forEach((producto, indice) => {
+      total = total + producto.precio * producto.cantidad;
+      const containerCarrito = document.createElement("div");
+      containerCarrito.className = "productoDelCarrito";
+      containerCarrito.innerHTML = `
+      <img class="imgCarrito" src="${producto.imagen}">
+      <div class="infoCarrito" >${producto.nombre}</div>
+      <div class="infoCarrito" > Cantidad: ${producto.cantidad}</div>
+      <div class="infoCarrito"> Precio: $ ${producto.precio}</div>
+      <div class="infoCarrito"> Subtotal: $ ${
+        producto.precio * producto.cantidad
+      }</div>
+      <button class="btnCarrito" onClick="quitarProducto(${indice})">`;
+      carrito.appendChild(containerCarrito);
+    });
+  }
+};
+
 /* interactuar con el dom */
 
 $("#containerInputs").submit(sacarCalculoPromedio);
@@ -66,8 +123,6 @@ function sacarCalculoPromedio(e) {
 
   arrayPartidas.splice(0, 1);
 }
-
-//
 
 const actualizarTablaPosiciones = () => {
   arrayTop.sort(function (a, b) {
