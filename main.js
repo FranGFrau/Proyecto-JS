@@ -60,7 +60,7 @@ const subirProductos = (respuesta) => {
   });
 };
 
-let carrito = $("#cart");
+let carrito = document.getElementById("cart");
 
 const armarCarrito = () => {
   let total = 0;
@@ -82,7 +82,43 @@ const armarCarrito = () => {
       <button class="btnCarrito" onClick="quitarProducto(${indice})">`;
       carrito.appendChild(containerCarrito);
     });
+    const containerTotal = document.createElement("div");
+    containerTotal.className = "carrito__total";
+    containerTotal.innerHTML = `
+    <div class= "total"> TOTAL $ ${total}</div>
+    <button class= "btn btn-danger finalizar" id="finalizar" onClick="finalizarCompra()"> FINALIZAR COMPRA </button>`;
+    carrito.appendChild(containerTotal);
+  } else {
+    carrito.classList.remove("cart");
   }
+};
+
+let cart = [];
+
+if (localStorage.getItem("cart")) {
+  cart = JSON.parse(localStorage.getItem("cart"));
+  armarCarrito();
+}
+
+const agregarAlCarrito = (indiceProducto) => {
+  const indiceEnElCarrito = cart.findIndex((elemento) => {
+    return elemento.id === productos[indiceProducto].id;
+  });
+  if (indiceEnElCarrito === -1) {
+    const agregarProducto = productos[indiceProducto];
+    agregarProducto.cantidad = 1;
+    cart.push(agregarProducto);
+    actualizarStorage(cart);
+    armarCarrito();
+  } else {
+    cart[indiceEnElCarrito].cantidad += 1;
+    actualizarStorage(cart);
+    armarCarrito();
+  }
+};
+
+const actualizarStorage = (cart) => {
+  localStorage.setItem("cart", JSON.stringify(cart));
 };
 
 /* interactuar con el dom */
