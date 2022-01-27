@@ -1,5 +1,7 @@
 /* Globals */
-
+html {
+  scroll-behavior: smooth;
+}
 * {
   margin: 0;
   box-sizing: border-box;
@@ -146,10 +148,17 @@
 /* Container 3 */
 
 .main .container3 {
-  width: 95%;
+  max-width: 95%;
   background-color: brown;
   border-radius: 10px;
   margin: 2rem auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.main .container3 .tarj {
+  width: 20%;
+  border: rgb(0, 0, 0);
 }
 .main .container3-2 {
   width: 95%;

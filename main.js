@@ -79,14 +79,14 @@ const armarCarrito = () => {
       <div class="infoCarrito"> Subtotal: $ ${
         producto.precio * producto.cantidad
       }</div>
-      <button class="btnCarrito" onClick="quitarProducto(${indice})">`;
+      <button class="btnCarrito" onClick="quitarProducto(${indice})">Quitar producto</button>`;
       carrito.appendChild(containerCarrito);
     });
     const containerTotal = document.createElement("div");
     containerTotal.className = "carrito__total";
     containerTotal.innerHTML = `
     <div class= "total"> TOTAL $ ${total}</div>
-    <button class= "btn btn-danger finalizar" id="finalizar" onClick="finalizarCompra()"> FINALIZAR COMPRA </button>`;
+    <button class= "btn btn-danger finalizar" id="finalizar" onClick="terminarCompra()"> FINALIZAR COMPRA </button>`;
     carrito.appendChild(containerTotal);
   } else {
     carrito.classList.remove("cart");
@@ -99,6 +99,12 @@ if (localStorage.getItem("cart")) {
   cart = JSON.parse(localStorage.getItem("cart"));
   armarCarrito();
 }
+
+const quitarProducto = (indice) => {
+  cart.splice(indice, 1);
+  actualizarStorage(cart);
+  armarCarrito();
+};
 
 const agregarAlCarrito = (indiceProducto) => {
   const indiceEnElCarrito = cart.findIndex((elemento) => {
@@ -119,6 +125,39 @@ const agregarAlCarrito = (indiceProducto) => {
 
 const actualizarStorage = (cart) => {
   localStorage.setItem("cart", JSON.stringify(cart));
+};
+
+const terminarCompra = () => {
+  const totalFinal = document.getElementsByClassName("total")[0].innerHTML;
+  carrito.innerHTML = "";
+  const compraTerminada = `<h3>Ingrese su informacion</h3>
+  <div class="formContainer__compra">
+  <div class="formContainer__item">
+  <label>Nombre</label>
+  <input type="text" id="nombre" placeholder="Nombre" />
+  </div>
+  <div class="formContainer__item">
+  <label>Apellido</label>
+  <input type="text" id="apellido" placeholder="Apellido" />
+  </div>
+  <div class="formContainer__item">
+  <label>Cuenta de Paypal</label>
+  <input type="text" id="payPal" placeholder="Cuenta de PayPal" />
+  </div>
+  <div class="formContainer__item">
+  <label>Cuenta de Steam</label>
+  <input type="text" id="steam" placeholder="Cuenta de Steam" />
+  </div>
+  <button type="button" class="formContainer__btn" onClick="mensajeCompraTerminada()">Confirmar</button>
+  </div> `;
+  carrito.innerHTML = compraTerminada;
+};
+
+const mensajeCompraTerminada = () => {
+  const nombreCliente = document.getElementById("nombre").value;
+  carrito.innerHTML = "";
+  let texto = `Gracias por confiar en nosotros ${nombreCliente}, en breve le llegaran sus objetos a su cuenta`;
+  carrito.innerHTML = texto;
 };
 
 /* interactuar con el dom */
