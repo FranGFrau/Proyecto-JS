@@ -50,9 +50,9 @@ const subirProductos = (respuesta) => {
     let html = `
   <img src="${producto.imagen}" class="tarj__img" alt="...">
   <div class="tarj__body">
-  <h4 class="tarj__titulo">${producto.nombre}</h4>
-  <p class="tarj__precio">${producto.precio}</p>
-  <a href="#cart" class="tarj__btn" onClick="agregarAlCarrito(${indice})">Comprar</a>
+    <h4 class="tarj__titulo">${producto.nombre}</h4>
+    <p class="tarj__precio">$ARS ${producto.precio}</p>
+    <button href="#cart" class="tarj__btn" onClick="agregarAlCarrito(${indice})">Comprar</button>
   </div>
   `;
     tarj.innerHTML = html;
@@ -75,8 +75,8 @@ const armarCarrito = () => {
       <img class="imgCarrito" src="${producto.imagen}">
       <div class="infoCarrito" >${producto.nombre}</div>
       <div class="infoCarrito" > Cantidad: ${producto.cantidad}</div>
-      <div class="infoCarrito"> Precio: $ ${producto.precio}</div>
-      <div class="infoCarrito"> Subtotal: $ ${
+      <div class="infoCarrito"> Precio: $ARS ${producto.precio}</div>
+      <div class="infoCarrito"> Subtotal: $ARS ${
         producto.precio * producto.cantidad
       }</div>
       <button class="btnCarrito" onClick="quitarProducto(${indice})">Quitar producto</button>`;
@@ -85,7 +85,7 @@ const armarCarrito = () => {
     const containerTotal = document.createElement("div");
     containerTotal.className = "carrito__total";
     containerTotal.innerHTML = `
-    <div class= "total"> TOTAL $ ${total}</div>
+    <div class= "total"> TOTAL: $ARS ${total}</div>
     <button class= "btn btn-danger finalizar" id="finalizar" onClick="terminarCompra()"> FINALIZAR COMPRA </button>`;
     carrito.appendChild(containerTotal);
   } else {
@@ -128,39 +128,38 @@ const actualizarStorage = (cart) => {
 };
 
 const terminarCompra = () => {
-  const totalFinal = document.getElementsByClassName("total")[0].innerHTML;
   carrito.innerHTML = "";
-  const compraTerminada = `<h3>Ingrese su informacion</h3>
+  const compraTerminada = `<div class="formularioCompra"><h3>Ingrese su informacion</h3>
   <div class="formContainer__compra">
   <div class="formContainer__item">
   <label>Nombre</label>
-  <input type="text" id="nombre" placeholder="Nombre" />
+  <input type="text" id="nombre" placeholder="Nombre" required>
   </div>
   <div class="formContainer__item">
   <label>Apellido</label>
-  <input type="text" id="apellido" placeholder="Apellido" />
+  <input type="text" id="apellido" placeholder="Apellido" required>
   </div>
   <div class="formContainer__item">
   <label>Cuenta de Paypal</label>
-  <input type="text" id="payPal" placeholder="Cuenta de PayPal" />
+  <input type="text" id="payPal" placeholder="Cuenta de PayPal" required>
   </div>
   <div class="formContainer__item">
   <label>Cuenta de Steam</label>
-  <input type="text" id="steam" placeholder="Cuenta de Steam" />
+  <input type="text" id="steam" placeholder="Cuenta de Steam" required>
   </div>
   <button type="button" class="formContainer__btn" onClick="mensajeCompraTerminada()">Confirmar</button>
-  </div> `;
+  </div></div> `;
   carrito.innerHTML = compraTerminada;
 };
 
 const mensajeCompraTerminada = () => {
   const nombreCliente = document.getElementById("nombre").value;
   carrito.innerHTML = "";
-  let texto = `Gracias por confiar en nosotros ${nombreCliente}, en breve le llegaran sus objetos a su cuenta`;
+  let texto = `<p class="textoFinal">Gracias por confiar en nosotros ${nombreCliente}, en breve le llegaran sus objetos a su cuenta</p>`;
   carrito.innerHTML = texto;
 };
 
-/* interactuar con el dom */
+/* Calculador de pormedios */
 
 $("#containerInputs").submit(sacarCalculoPromedio);
 
@@ -220,20 +219,20 @@ actualizarTablaPosiciones();
 
 $("#sliderBanner1").append(`
   <div id="sliderTransparente1" class="slider1">
-    <div>icono</div>
-    <p>texto de ejemplo</p>
+    <i class="fas fa-cart-arrow-down fa-3x"></i>
+    <p>Tienda de cajas de Counter Strike a su disposicion</p>
   </div>`);
 
 $("#sliderBanner2").append(`
   <div id="sliderTransparente2" class="slider2">
-    <div>icono</div>
-    <p>texto de ejemplo distinto 60</p>
+    <i class="fas fa-clock fa-3x"></i>
+    <p>Facil y rapido de usar</p>
   </div>`);
 
 $("#sliderBanner3").append(`
   <div id="sliderTransparente3" class="slider3">
-    <div>icono</div>
-    <p>texto de ejemplo distinto 120</p>
+    <i class="fas fa-globe fa-3x"></i>
+    <p>Totalmente en linea, sin necesidad de descargar nada</p>
   </div>`);
 
 $("#sliderBanner1").hover(() => {

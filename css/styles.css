@@ -5,6 +5,7 @@ html {
 * {
   margin: 0;
   box-sizing: border-box;
+  font-family: "Roboto Condensed", sans-serif;
 }
 :root {
   --color-sliders: rgba(46, 45, 48, 0.493);
@@ -41,10 +42,11 @@ html {
 }
 .nav .container__nav .items {
   text-decoration: none;
-  color: inherit;
-  box-shadow: blue;
   text-transform: uppercase;
   color: brown;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 /* MAIN */
@@ -82,6 +84,10 @@ html {
   justify-content: center;
   align-items: center;
   color: aliceblue;
+  flex-direction: column;
+}
+.main .container1 .banner .bannerItem1 .slider1 p {
+  font-size: 1.1rem;
 }
 .main .container1 .banner .bannerItem2 .slider2 {
   height: 100%;
@@ -91,6 +97,10 @@ html {
   justify-content: center;
   align-items: center;
   color: aliceblue;
+  flex-direction: column;
+}
+.main .container1 .banner .bannerItem2 .slider2 p {
+  font-size: 1.1rem;
 }
 .main .container1 .banner .bannerItem3 .slider3 {
   height: 100%;
@@ -100,6 +110,10 @@ html {
   justify-content: center;
   align-items: center;
   color: aliceblue;
+  flex-direction: column;
+}
+.main .container1 .banner .bannerItem3 .slider3 p {
+  font-size: 1.1rem;
 }
 .main .container1 .banner .bannerItem2 {
   background-image: url("../media/csgo.jpeg");
@@ -119,26 +133,51 @@ html {
   background-color: brown;
   height: 100%;
   width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main .container1 .banner .bannerItem4 p {
+  display: flex;
+  width: 98%;
+  height: 98%;
+  justify-content: space-between;
+  padding: 1rem;
+  align-items: center;
+  border: 4px solid #000;
+  border-radius: 6px;
+  margin: 0.1rem;
+  background-color: rgb(77, 19, 19);
+  color: aliceblue;
+  font-size: 2rem;
 }
 
 /* Container 2 */
 
 .main .container2 {
   width: 95%;
+  min-height: 150px;
   background-color: brown;
   border-radius: 10px;
   margin: 2rem auto;
   padding: 0.5rem 0cm;
-}
-.main .container2 .inputs {
+  color: aliceblue;
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(77, 19, 19);
+  border: 3px solid #000;
+  border-radius: 6px;
+  color: aliceblue;
 }
 .main .container2 .boxInfo {
   width: 95%;
   background-color: rgb(62, 62, 62);
   margin: 1rem auto;
   height: 4.5rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 .main .container2 .boxInfo .boxEstilo {
   color: bisque;
@@ -154,28 +193,146 @@ html {
   margin: 2rem auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .main .container3 .tarj {
-  width: 20%;
-  border: rgb(0, 0, 0);
+  width: 18%;
+  background-color: rgb(77, 19, 19);
+  border: 6px solid #000;
+  border-radius: 10px;
+  margin: 1rem;
 }
+.main .container3 .tarj img {
+  max-height: 300px;
+}
+.main .container3 .tarj .tarj__body {
+  padding: 0.8rem;
+  color: aliceblue;
+}
+.main .container3 .tarj .tarj__body h4 {
+  border-top: 3px solid #000;
+}
+.main .container3 .tarj .tarj__body button {
+  background-color: cornflowerblue;
+  border-radius: 5px;
+  height: 1.8rem;
+}
+/* Container 3-2 */
+
 .main .container3-2 {
-  width: 95%;
+  max-width: 95%;
   background-color: brown;
   border-radius: 10px;
   margin: 2rem auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
-
+.main .container3-2 .cart {
+  margin: 2rem auto;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.main .container3-2 .cart .productoDelCarrito {
+  display: flex;
+  width: 100%;
+  height: 10rem;
+  justify-content: space-between;
+  padding: 1rem;
+  align-items: center;
+  border: 6px solid #000;
+  border-radius: 6px;
+  margin: 0.1rem;
+  background-color: rgb(77, 19, 19);
+  color: aliceblue;
+}
+.main .container3-2 .cart .productoDelCarrito .imgCarrito {
+  max-height: 200px;
+  object-fit: cover;
+}
+.main .container3-2 .cart .productoDelCarrito .infoCarrito {
+  min-width: 186px;
+}
+.main .container3-2 .cart .productoDelCarrito .btnCarrito {
+  border-radius: 5px;
+  height: 1.8rem;
+  background-color: crimson;
+}
+.main .container3-2 .cart .carrito__total {
+  margin: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: aliceblue;
+}
+.main .container3-2 .cart .carrito__total button {
+  margin-left: 5rem;
+  border-radius: 5px;
+  height: 1.8rem;
+  background-color: greenyellow;
+}
+.main .container3-2 #cart.cart {
+  display: flex;
+  justify-content: center;
+}
+.main .container3-2 .cart .formularioCompra {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(77, 19, 19);
+  border: 3px solid #000;
+  border-radius: 6px;
+  width: 40%;
+  margin: auto;
+  color: aliceblue;
+}
+.main .container3-2 .cart .formularioCompra .formContainer__compra {
+  padding: 1rem;
+}
+.main
+  .container3-2
+  .cart
+  .formularioCompra
+  .formContainer__compra
+  .formContainer__item {
+  margin: 1rem;
+}
+.main
+  .container3-2
+  .cart
+  .formularioCompra
+  .formContainer__compra
+  .formContainer__btn {
+  float: right;
+  border-radius: 5px;
+  height: 1.8rem;
+  background-color: grey;
+}
+.main .container3-2 .cart .textoFinal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(77, 19, 19);
+  border: 3px solid #000;
+  border-radius: 6px;
+  width: 40%;
+  margin: auto;
+  min-height: 252px;
+  color: aliceblue;
+}
 /* Container 4 */
 
 .main .container4 {
   width: 95%;
   background-color: brown;
   border-radius: 10px;
-  margin-top: 2rem;
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
+  min-height: 600.2px;
 }
 .main .container1 .texto__banner {
   color: brown;
@@ -184,7 +341,9 @@ html {
   width: 95%;
   background-color: rgb(62, 62, 62);
   margin: 1rem auto;
+  padding-top: 1rem;
   height: 4.5rem;
+  color: aliceblue;
 }
 .main .container4 .boxInfo .boxPosicion {
   display: flex;

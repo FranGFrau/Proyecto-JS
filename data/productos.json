@@ -1,61 +1,61 @@
 [
   {
     "id": 1,
-    "precio": 300,
+    "precio": 229.58,
     "nombre": "Caja Sueños y Pesadillas",
     "imagen": "../media/Sueños.png"
   },
   {
     "id": 2,
-    "precio": 300,
+    "precio": 12.39,
     "nombre": "Caja CSGO20",
     "imagen": "../media/CSGO20.png"
   },
   {
     "id": 3,
-    "precio": 300,
+    "precio": 12.73,
     "nombre": "Caja Clutch",
     "imagen": "../media/Clutch.png"
   },
   {
     "id": 4,
-    "precio": 300,
+    "precio": 201.77,
     "nombre": "Caja de Guantes",
     "imagen": "../media/Guantes.png"
   },
   {
     "id": 5,
-    "precio": 300,
+    "precio": 246.45,
     "nombre": "Caja Operación Breakout",
     "imagen": "../media/Breakout.png"
   },
   {
     "id": 6,
-    "precio": 300,
+    "precio": 39.12,
     "nombre": "Caja Espectro 2",
     "imagen": "../media/Espectro 2.png"
   },
   {
     "id": 7,
-    "precio": 300,
+    "precio": 53.79,
     "nombre": "Caja Gamma 2",
     "imagen": "../media/Gamma 2.png"
   },
   {
     "id": 8,
-    "precio": 300,
+    "precio": 82,
     "nombre": "Caja Operación Broken Fang",
     "imagen": "../media/Broken Fang.png"
   },
   {
     "id": 9,
-    "precio": 300,
+    "precio": 5.49,
     "nombre": "Caja Fractura",
     "imagen": "../media/Fracture.png"
   },
   {
     "id": 10,
-    "precio": 300,
+    "precio": 6.01,
     "nombre": "Caja de Danger Zone",
     "imagen": "../media/de Danger Zone.png"
   }
